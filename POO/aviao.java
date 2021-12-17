@@ -2,23 +2,13 @@ package POO;
 
 public class aviao {
 	
-		private String modelo;
-		private int tamanho;
-		public String motores;
-		public int velocidade;
-		public int altitude;
-		
-		public aviao(String modelo, int tamanho, String motores, int velocidade, int altitude) {
-			// TODO Auto-generated constructor stub
-			this.modelo = modelo;
-			this.motores = motores;
-			this.velocidade = velocidade;
-			this.altitude = altitude;
-			
+		String modelo;
+		int tamanho;
+		String motores;
+		double atualAltitude;
+		double mAltitude;
+	
 				
-		}
-
-		
 		
 		public String getModelo() {
 			return modelo;
@@ -43,62 +33,32 @@ public class aviao {
 		}
 
 
-
-		void aumentarAltitude(int metros) {
-			
-			altitude += metros;
-			aviao1.aumentarAltitude(5);
-			
-			
-		}
-		
-		public int getAumentarAltitude()
+		void decolar()
 		{
-		int aumentarAltitude =	altitude;
-		return aumentarAltitude;
-		
+			System.out.println("O avião decolou...");
 		}
-		void reduzirAltitude(int metros) {
+		
+		void AltitudeM(int metros) {
 			
-			altitude -= metros;
-			aviao2.reduzirAltitude(2);			
+			double novaAltitude = this.atualAltitude+metros;
+			this.atualAltitude = novaAltitude;
 		}
-		
-		public int getReduzirAltitude()
-		{
-		int reduzirAltitude =	altitude;
-		return reduzirAltitude;
-		
+		int Al(){
+			if(this.atualAltitude<0)
+			{
+			return -1;
+			
+			}
+			if(this.atualAltitude>=0 && this.atualAltitude<520) {
+				return 1;
+			}
+			if(this.atualAltitude>=500 &&this.atualAltitude<700) {
+				return 2;
+			}
+			return 3;
 		}
-
-		void aumentarVelocidade(int acelerar) {
-	
-			velocidade += acelerar;
-			aviao1.aumentarVelocidade(3);	
-		}
-		
-		public int getAumentarVelocidade()
-		{
-		int aumentarVelocidade =	velocidade;
-		return aumentarVelocidade;
-		
-		}
-
-		void reduzirVelocidade(int desacelerar) {
-	
-			velocidade += desacelerar;
-			aviao1.reduzirVelocidade(3);	
-		}
-		
-		public int getReduzirVelocidade()
-		{
-		int reduzirVelocidade =	velocidade;
-		return reduzirVelocidade;
-		
-		}
-
-
-		
+        
+				
 	}
 
 
